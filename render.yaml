@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: content-gap-analyzer-mvp
+    env: docker
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: HTTP_TIMEOUT_SECONDS
+        value: "20"
+      - key: HTTP_RETRIES
+        value: "2"
